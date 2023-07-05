@@ -2,6 +2,7 @@
 var inputdata = document.getElementById("form");
 var sentence = document.getElementById("sentence");
 var timer = document.getElementById("timer");
+var score = document.getElementById("score");
 
 //定数宣言
 const asksec = 10;
@@ -23,20 +24,24 @@ for(var i = 0; i < csvdata.length; ++i)
 
 //最初に表示する文字を設定
 sentence.textContent = typedata[getRandomNum(typedata.length)];
-var count = asksec;
+score.textContent += "0";
+var seccount = asksec;
+var pointcount = 0;
 
 //設定した秒数経過するたびに呼ばれる設定
 var intervalfunc = setInterval(function()
 {
-    timer.textContent = "Time Left:" + count.toString();
-
-    if(count < 0)
+    if(seccount <= 0)
     {
-        count = 0;
+        seccount = 0;
         clearInterval(intervalfunc);
     }
-
-    count--;
+    else
+    {
+        seccount--;
+        timer.textContent = "Time Left:" + seccount.toString();
+    }
+    
 },1000)
 
 //入力されたときのイベント設定
@@ -48,7 +53,12 @@ inputdata.addEventListener("input",function()
         //入力されている文字を消して、次の表示する文字をランダムに設定する
         inputdata.value = "";
         sentence.textContent = typedata[getRandomNum(typedata.length)];
-        count += addsec;
+
+        //スコア追加と時間追加
+        seccount += addsec;
+        pointcount++;
+
+        score.textContent = "Score:" + pointcount.toString();
     }
 });
 
