@@ -25,24 +25,36 @@ for(var i = 0; i < csvdata.length; ++i)
 //最初に表示する文字を設定
 sentence.textContent = typedata[getRandomNum(typedata.length)];
 score.textContent += "0";
+
+//制限時間とスコアの初期値入力
 var seccount = asksec;
 var pointcount = 0;
+timer.textContent = "Time Left:" + seccount.toString();
+
+//インターバルのIDを格納しておく(消したりするため)
+var intervalId = setInterval(updateTimer,1000);
 
 //設定した秒数経過するたびに呼ばれる設定
-var intervalfunc = setInterval(function()
+function updateTimer()
 {
-    if(seccount <= 0)
+    //秒数カウントダウン
+    seccount--;
+
+    //秒数が0以下だったらタイマー処理を停止する
+    if(seccount < 0)
     {
         seccount = 0;
-        clearInterval(intervalfunc);
+        if(intervalId)
+        {
+            clearInterval(intervalId);
+        }
     }
     else
     {
-        seccount--;
         timer.textContent = "Time Left:" + seccount.toString();
     }
     
-},1000)
+}
 
 //入力されたときのイベント設定
 inputdata.addEventListener("input",function()
@@ -58,7 +70,17 @@ inputdata.addEventListener("input",function()
         seccount += addsec;
         pointcount++;
 
+        //スコアと時間表示
         score.textContent = "Score:" + pointcount.toString();
+        timer.textContent = "Time Left:" + seccount.toString();
+
+        //今使用しているインターバルを停止して新たにインターバルを生成して開始する
+        if(intervalId)
+        {
+            clearInterval(intervalId);
+        }
+        intervalId = setInterval(updateTimer,1000);
+
     }
 });
 
