@@ -3,6 +3,14 @@ var inputdata = document.getElementById("form");
 var sentence = document.getElementById("sentence");
 var timer = document.getElementById("timer");
 var score = document.getElementById("score");
+var typerarea = document.getElementById("typerarea");
+var reloadbutton = document.getElementById("reloadbutton");
+var result = document.getElementById("result");
+var resultscore = document.getElementById("resultscore");
+
+
+//現在のHTMLデータを取得
+var defaultHTML = document.body.innerHTML;
 
 //定数宣言
 const asksec = 10;
@@ -22,14 +30,10 @@ for(var i = 0; i < csvdata.length; ++i)
     }
 }
 
-//最初に表示する文字を設定
-sentence.textContent = typedata[getRandomNum(typedata.length)];
-score.textContent += "0";
-
-//制限時間とスコアの初期値入力
-var seccount = asksec;
+//初期化処理を行う
+var seccount = 0;
 var pointcount = 0;
-timer.textContent = "Time Left:" + seccount.toString();
+initsspeedtyper();
 
 //インターバルのIDを格納しておく(消したりするため)
 var intervalId = setInterval(updateTimer,1000);
@@ -48,6 +52,9 @@ function updateTimer()
         {
             clearInterval(intervalId);
         }
+
+        //終了時に画面を変更
+        showresult();
     }
     else
     {
@@ -90,4 +97,43 @@ function getRandomNum(max)
     return Math.floor(Math.random() * max);
 }
 
+reloadbutton.addEventListener("click",function()
+{
+    resetspeedtyper();
+})
 
+//リザルト画面表示
+function showresult()
+{
+    result.style.display = "inline";
+    typerarea.style.display = "none";
+
+    resultscore.textContent = "Your final score is " + pointcount.toString();
+
+}
+
+//リセット処理
+function resetspeedtyper()
+{
+    //初期化処理を行う
+    initsspeedtyper();
+
+    //タイマーの処理開始
+    intervalId = setInterval(updateTimer,1000);
+
+    result.style.display = "none";
+    typerarea.style.display = "inline";
+}
+
+//初期化処理
+function initsspeedtyper()
+{
+    //最初に表示する文字を設定
+    sentence.textContent = typedata[getRandomNum(typedata.length)];
+    score.textContent = "Score:0"
+
+    //制限時間とスコアの初期値入力
+    seccount = asksec;
+    pointcount = 0;
+    timer.textContent = "Time Left:" + seccount.toString();
+}

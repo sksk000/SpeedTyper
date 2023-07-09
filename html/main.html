@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <dev class="selectdefficalty">
+    <dev class="selectdefficalty" id="selectdefficalty">
         <p class="text-center">Difficulty</p>
         <select class="form-select" aria-label="aa">
             <option selected>Easy</option>
@@ -21,13 +21,19 @@
         </select>
     </dev>
 
-    <dev class="typerarea">
-        <p class="text-center">SpeedTyper</p>
+    <dev class="typerarea" id="typerarea">
+        <p class="text-center" id="title">SpeedTyper</p>
         <p class="text-center" id="timer">Time Left:</p>
         <p class="text-center" id="score">Score:</p>
         <p class="text-center">Type the following:</p>
         <p class="text-center" id="sentence">None</p>
         <input class="form-control" type="text" placeholder="type the word here..."aria-label="default input example" id="form">
+    </dev>
+
+    <dev class="result" id="result">
+        <p class="text-center" id="resulttext">Time ran out</p>
+        <p class="text-center" id="resultscore">Your final score is </p>
+        <button type="button" class="btn btn-primary" id="reloadbutton">reload</button>
     </dev>
 
     <dev class="button">
