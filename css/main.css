@@ -1,9 +1,11 @@
 #result{
     display: none;
+    margin: auto;
 }
 #typerarea{
     background-color:antiquewhite;
-    height: 200px;
+    height: 300px;
+    margin-top: 250px;
 }
 #titlearea{
     background-color:coral;
@@ -16,6 +18,7 @@
 }
 #type{
     font-size: 90%;
+    margin-top: 60px;
 }
 #sentence{
     font-size: 150%;
@@ -35,5 +38,4 @@ nav.openoption{
     top:90%;
     left:3%;
     position: fixed;
-
 }

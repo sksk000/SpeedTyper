@@ -1,5 +1,5 @@
 //必要な変数設定
-var inputdata = document.getElementById("inputtypedata");
+var inputdata = document.getElementById("inputtypearea");
 var sentence = document.getElementById("sentence");
 var timer = document.getElementById("timer");
 var score = document.getElementById("score");
