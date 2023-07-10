@@ -1,3 +1,39 @@
 #result{
     display: none;
 }
+#typerarea{
+    background-color:antiquewhite;
+    height: 200px;
+}
+#titlearea{
+    background-color:coral;
+}
+#score{
+    float: right;
+}
+#title{
+    font-size: 150%;
+}
+#type{
+    font-size: 90%;
+}
+#sentence{
+    font-size: 150%;
+}
+/*オプションバー*/
+#selectdefficalty{
+    background-color: aquamarine;
+    transition: .3s;
+}
+/*オプション開いたときの動作(最初は開いたまま)*/
+nav.openoption{
+    z-index: 1;
+    transform: translateY(-100px);
+
+}
+.button{
+    top:90%;
+    left:3%;
+    position: fixed;
+
+}
