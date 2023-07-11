@@ -138,6 +138,9 @@ function initsspeedtyper()
     seccount = asksec;
     pointcount = 0;
     timer.textContent = "Time Left:" + seccount.toString();
+
+    //入力部分をきれいにしておく
+    inputdata.value = "";
 }
 
 //上にある難易度選択をボタンを押したら非表示にするように変更
