@@ -1,12 +1,14 @@
 //必要な変数設定
-var inputdata = document.getElementById("form");
+var inputdata = document.getElementById("inputtypearea");
 var sentence = document.getElementById("sentence");
 var timer = document.getElementById("timer");
 var score = document.getElementById("score");
-var typerarea = document.getElementById("typerarea");
+var typerarea = document.getElementById("typetext");
 var reloadbutton = document.getElementById("reloadbutton");
 var result = document.getElementById("result");
 var resultscore = document.getElementById("resultscore");
+var optionbutton = document.getElementById("optionbutton");
+var option = document.getElementById("selectdefficalty");
 
 
 //現在のHTMLデータを取得
@@ -137,3 +139,9 @@ function initsspeedtyper()
     pointcount = 0;
     timer.textContent = "Time Left:" + seccount.toString();
 }
+
+//上にある難易度選択をボタンを押したら非表示にするように変更
+optionbutton.addEventListener("click",function()
+{
+    option.classList.toggle("openoption");
+})
