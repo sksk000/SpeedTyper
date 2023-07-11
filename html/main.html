@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="jp" dir="ltr">
 
-<script type="text/csv" id="csv">
+<script type="text/csv" id="easy">
     seal,badger,puppy,dolphin,foal,wolf,bear
+</script>
+<script type="text/csv" id="midiam">
+    mosquito,cockroach,butterfly,dragonfly,cricket,bagworm,weevil
+</script>
+<script type="text/csv" id="hard">
+    downtown,kindergarten,courthouse,campground,guesthouse,memorialgrounds,juniorhighschool
 </script>
 
 <head>
@@ -16,9 +22,9 @@
         <div class="row justify-content-center">
             <div class="col-1 d-flex align-items-center" id="difficultytext">Difficulty</div>
             <div class="col-2">
-                <select class="form-select w-40">
+                <select class="form-select w-40" id="optionlist">
                     <option selected>Easy</option>
-                    <option value="1">Mediam</option>
+                    <option value="1">Midiam</option>
                     <option value="2">Hard</option>
                 </select>
             </div>

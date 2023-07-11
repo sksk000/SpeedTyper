@@ -9,6 +9,8 @@ var result = document.getElementById("result");
 var resultscore = document.getElementById("resultscore");
 var optionbutton = document.getElementById("optionbutton");
 var option = document.getElementById("selectdefficalty");
+var optionlist = document.getElementById("optionlist");
+
 
 
 //現在のHTMLデータを取得
@@ -18,23 +20,17 @@ var defaultHTML = document.body.innerHTML;
 const asksec = 10;
 const addsec = 4;
 
-//タイピングデータをCSVから取得
-var csvdata = document.getElementById("csv").textContent.trim();
-var typedata = new Array(); 
-var splitdata = csvdata.split(",");
-
-//CSVデータを配列に格納
-for(var i = 0; i < csvdata.length; ++i)
-{
-    if(splitdata[i])
-    {
-        typedata.push(splitdata[i]); 
-    }
-}
+//タイピングデータを格納する変数用意
+var typedata = new Array();
+typedata = readCSV();
 
 //初期化処理を行う
 var seccount = 0;
 var pointcount = 0;
+
+//現在の難易度の番号
+var selectIndex;
+
 initsspeedtyper();
 
 //インターバルのIDを格納しておく(消したりするため)
@@ -73,7 +69,7 @@ inputdata.addEventListener("input",function()
     {
         //入力されている文字を消して、次の表示する文字をランダムに設定する
         inputdata.value = "";
-        sentence.textContent = typedata[getRandomNum(typedata.length)];
+        sentence.textContent = typedata[selectIndex][getRandomNum(typedata[selectIndex].length)];
 
         //スコア追加と時間追加
         seccount += addsec;
@@ -101,6 +97,7 @@ function getRandomNum(max)
 
 reloadbutton.addEventListener("click",function()
 {
+    //リセット処理を行う
     resetspeedtyper();
 })
 
@@ -130,8 +127,11 @@ function resetspeedtyper()
 //初期化処理
 function initsspeedtyper()
 {
+    //現在選択されているオプションIndexを設定する
+    selectIndex = optionlist.selectedIndex;
+
     //最初に表示する文字を設定
-    sentence.textContent = typedata[getRandomNum(typedata.length)];
+    sentence.textContent = typedata[selectIndex][getRandomNum(typedata.length)];
     score.textContent = "Score:0"
 
     //制限時間とスコアの初期値入力
@@ -145,3 +145,33 @@ optionbutton.addEventListener("click",function()
 {
     option.classList.toggle("openoption");
 })
+
+//CSVのデータを読む
+function readCSV()
+{
+    var ret = new Array();
+    //用意しているCSVデータを取得する
+    for(var i = 0; i < optionlist.options.length; ++i)
+    {
+        //データをCSVから取得
+        var csvdata = document.getElementById(optionlist.options[i].innerText.toLowerCase()).textContent.trim();
+        var data = new Array(); 
+        var splitdata = csvdata.split(",");
+
+        var data = new Array();
+        //CSVデータを配列に格納
+        for(var j = 0; j < csvdata.length; ++j)
+        {  
+            if(splitdata[j])
+            {
+                data.push(splitdata[j]); 
+            }
+        }
+
+        //二次元配列を作成する
+        ret.push(data);
+    }
+
+    return ret;
+
+}
