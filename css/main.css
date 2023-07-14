@@ -1,41 +1,43 @@
-#result{
-    display: none;
-    margin: auto;
+#result {
+  display: none;
 }
-#typerarea{
-    background-color:antiquewhite;
-    height: 300px;
-    margin-top: 250px;
+#score {
+  float: right;
 }
-#titlearea{
-    background-color:coral;
+#title {
+  font-size: 150%;
+  background-color: aquamarine;
 }
-#score{
-    float: right;
+#type {
+  font-size: 90%;
+  margin-top: 60px;
 }
-#title{
-    font-size: 150%;
-}
-#type{
-    font-size: 90%;
-    margin-top: 60px;
-}
-#sentence{
-    font-size: 150%;
+#sentence {
+  font-size: 150%;
 }
 /*オプションバー*/
-#selectdefficalty{
-    background-color: aquamarine;
-    transition: .3s;
+#selectdefficalty {
+  background-color: aquamarine;
+  transition: 0.3s;
 }
 /*オプション開いたときの動作(最初は開いたまま)*/
-nav.openoption{
-    z-index: 1;
-    transform: translateY(-100px);
-
+nav.openoption {
+  z-index: 1;
+  transform: translateY(-100px);
 }
-.button{
-    top:90%;
-    left:3%;
-    position: fixed;
+.button {
+  top: 90%;
+  left: 3%;
+  position: fixed;
+}
+#row {
+  background-color: cornflowerblue;
+  width: 500px;
+  min-width: 500px;
+  max-width: 500px;
+  height: 300px;
+  margin-top: -40px;
+}
+#result {
+  margin: auto;
 }
