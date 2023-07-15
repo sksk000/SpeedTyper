@@ -1,67 +1,83 @@
 <!DOCTYPE html>
 <html lang="jp" dir="ltr">
-
-<script type="text/csv" id="easy">
+  <script type="text/csv" id="easy">
     seal,badger,puppy,dolphin,foal,wolf,bear
-</script>
-<script type="text/csv" id="midiam">
+  </script>
+  <script type="text/csv" id="midiam">
     mosquito,cockroach,butterfly,dragonfly,cricket,bagworm,weevil
-</script>
-<script type="text/csv" id="hard">
+  </script>
+  <script type="text/csv" id="hard">
     downtown,kindergarten,courthouse,campground,guesthouse,memorialgrounds,juniorhighschool
-</script>
+  </script>
 
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>SpeedTyper</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/main.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
     <nav id="selectdefficalty">
+      <div class="container">
         <div class="row justify-content-center">
-            <div class="col-1 d-flex align-items-center" id="difficultytext">Difficulty</div>
-            <div class="col-2">
-                <select class="form-select w-40" id="optionlist">
-                    <option selected>Easy</option>
-                    <option value="1">Midiam</option>
-                    <option value="2">Hard</option>
-                </select>
-            </div>
+          <div class="col-1 d-flex align-items-center" id="difficultytext">
+            Difficulty
+          </div>
+          <div class="col-2">
+            <select class="form-select w-40" id="optionlist">
+              <option selected>Easy</option>
+              <option value="1">Midiam</option>
+              <option value="2">Hard</option>
+            </select>
+          </div>
         </div>
+      </div>
     </nav>
 
-
-    <div class="card mx-auto w-50 p-3" id="typerarea">
-        <div class="card-body" id="typetext">
-            <div class="border mx-auto" id="titlearea">
-                <div class="text-center" id="title">SpeedTyper</div>
-            </div>
-
-            <div class="text d-inline-block" id="timer">Time Left:</div>
-            <div class="text" id="score">Score:</div>
-            <div class="text-center mx-auto" id="type">Type the following:</div>
-            <div class="text-center" id="sentence">None</div>
-            <input class="form-control w-25 mx-auto" type="text" placeholder="type the word here..."aria-label="default input example" id="inputtypearea">
-        </div> 
-
-        <div class="result" id="result">
-            <p class="text-center" id="resulttext">Time ran out</p>
-            <p class="text-center" id="resultscore">Your final score is </p>
-            <div class="text-center">
-                <button type="button" class="btn btn-primary" id="reloadbutton">reload</button>
-            </div>
+    <div
+      class="container d-flex min-vh-100 justify-content-center align-items-center"
+      id="typerarea"
+    >
+      <div class="row border w-50" id="row">
+        <div class="col-md-12 h-50 p-3" id="typetext">
+          <div class="text-center mx-auto" id="title">SpeedTyper</div>
+          <div class="text d-inline-block" id="timer">Time Left:</div>
+          <div class="text" id="score">Score:</div>
+          <div class="text-center mx-auto" id="type">Type the following:</div>
+          <div class="text-center p-3" id="sentence">None</div>
+          <input
+            class="form-control w-50 mx-auto"
+            type="text"
+            placeholder="type the word here..."
+            aria-label="default input example"
+            id="inputtypearea"
+          />
         </div>
-    </div>
 
- 
+        <div class="col-md-12 h-50" id="result">
+          <p class="text-center mx-auto" id="resulttext">Time ran out</p>
+          <p class="text-center mx-auto" id="resultscore">
+            Your final score is
+          </p>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary" id="reloadbutton">
+              reload
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="button">
-        <button type="button" class="btn btn-primary" id="optionbutton">
-            option
-        </button>
+      <button type="button" class="btn btn-primary" id="optionbutton">
+        option
+      </button>
     </div>
-
-</body>
-<script src="../Javascript/main.js"></script>
+  </body>
+  <script src="../Javascript/main.js"></script>
 </html>
