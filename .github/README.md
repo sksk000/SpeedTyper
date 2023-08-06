@@ -19,6 +19,8 @@ https://vanillawebprojects.com/projects/typing-game/
 
 ### 実行方法
 #### Github上で確認する場合
+以下のURLにアクセスすると確認できます。
+https://sksk000.github.io/SpeedTyper/
 #### リポジトリを取得する場合
 1. git cloneコマンドを使用し、https://github.com/sksk000/SpeedTyper.git を指定して任意のフォルダにリポジトリを取得します。
 2. 任意のフォルダ\SpeedTyper\html内にあるmain.htmlを開くと実行することができます。
