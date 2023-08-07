@@ -2,7 +2,8 @@
 - HTML/CSS/Javascriptを勉強するため、[vanillawebprojects](https://vanillawebprojects.com/)にあるサイトを模写しました。
 - 制限時間内に表示された文字を正確に打つゲームになっております。
 ## デモ
-![SpeedTyper](https://github.com/sksk000/SpeedTyper/assets/137740372/24389344-ee87-4822-bac5-ecec79bc4bfd)
+![SpeedTyper](https://github.com/sksk000/SpeedTyper/assets/137740372/3ae813bd-d379-400f-9b5b-9d0b32bf7d51)
+
 
 ## 模写 元ページ
 https://vanillawebprojects.com/projects/typing-game/
