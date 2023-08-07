@@ -4,6 +4,8 @@
 ## デモ
 ![SpeedTyper](https://github.com/sksk000/SpeedTyper/assets/137740372/3ae813bd-d379-400f-9b5b-9d0b32bf7d51)
 
+## Github Pages URL
+- https://sksk000.github.io/SpeedTyper/
 
 ## 模写 元ページ
 https://vanillawebprojects.com/projects/typing-game/
@@ -26,9 +28,6 @@ https://vanillawebprojects.com/projects/typing-game/
  
 - Reload機能
   - 制限時間終了後に表示されるReloadボタンを押すと再度制限時間が始まりタイピングを行うことができます。
-
-## Github Pages URL
-- https://sksk000.github.io/SpeedTyper/
 
 ### 使用言語・使用ライブラリ
 #### 言語
