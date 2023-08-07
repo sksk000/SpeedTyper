@@ -5,6 +5,7 @@
 ![SpeedTyper](https://github.com/sksk000/SpeedTyper/assets/137740372/3ae813bd-d379-400f-9b5b-9d0b32bf7d51)
 
 ## Github Pages URL
+以下のURLにアクセスすると実装物を確認できます。
 - https://sksk000.github.io/SpeedTyper/
 
 ## 模写 元ページ
