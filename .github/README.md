@@ -1,6 +1,5 @@
 # SpeedTyper
 - HTML/CSS/Javascriptを勉強するため、[vanillawebprojects](https://vanillawebprojects.com/)にあるサイトを模写しました。
-- 
 ## デモ
 ![SpeedTyper](https://github.com/sksk000/SpeedTyper/assets/137740372/24389344-ee87-4822-bac5-ecec79bc4bfd)
 
